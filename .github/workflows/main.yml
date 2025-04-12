@@ -27,6 +27,6 @@ jobs:
           pip install -r requirements.txt      # 安裝 requirements.txt 中列出的依賴
       - name: Run Python script
         run: |
-          python test1.py  # 執行你的 Python 程式碼，將 `test1.py` 替換為你的腳本名稱
+          python XGboost.py  # 執行你的 Python 程式碼，將 `test1.py` 替換為你的腳本名稱
       - name: Feedback message - success
         run: echo "Success! The Python script executed successfully."
