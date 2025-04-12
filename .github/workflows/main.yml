@@ -1,0 +1,32 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main  # 在推送到 main 分支時觸發
+  pull_request:
+    branches:
+      - main  # 在對 main 分支發送 PR 時觸發
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 選擇運行的虛擬環境，這裡使用的是 Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # 檢出代碼
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # 設置 Python 版本，根據需要更改
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # 升級 pip
+          pip install -r requirements.txt      # 安裝 requirements.txt 中列出的依賴
+      - name: Run Python script
+        run: |
+          python test1.py  # 執行你的 Python 程式碼，將 `test1.py` 替換為你的腳本名稱
+      - name: Feedback message - success
+        run: echo "Success! The Python script executed successfully."
