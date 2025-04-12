@@ -9,9 +9,9 @@ import numpy as np
 
 
 # 讀取資料
-X_train = pd.read_csv('data/X_train.csv', header=0, usecols=lambda x: x != 0).values
-y_train = pd.read_csv('data/y_train.csv', header=0, usecols=[1]).values
-X_test = pd.read_csv('data/X_test.csv', header=0, usecols=lambda x: x != 0).values
+# X_train = pd.read_csv('data/X_train.csv', header=0, usecols=lambda x: x != 0).values
+# y_train = pd.read_csv('data/y_train.csv', header=0, usecols=[1]).values
+# X_test = pd.read_csv('data/X_test.csv', header=0, usecols=lambda x: x != 0).values
 
 # 標準化
 scaler = StandardScaler()
